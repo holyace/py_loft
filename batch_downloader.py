@@ -8,8 +8,6 @@ create by:chad at 2018/12/24
 from concurrent.futures import ThreadPoolExecutor
 import downloader
 
-pre_fix = "img_"
-
 
 def batch_download(url_map: dict, success_url: list, failed_url: list, save_path: str):
     with ThreadPoolExecutor(16) as executor:
