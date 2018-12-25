@@ -1,18 +1,32 @@
-import blogParser
-import thread
 import os
+import constants
+import response_parser
+import batch_downloader
 
 curr_dir = os.getcwd()
-jsonPath = curr_dir + "/res/lfimg.json"
-savePath = curr_dir + "/res/pic"
+json_path = curr_dir + constants.path_json
+save_path = curr_dir + constants.path_save_dir
 
-downloaded = []
-totalUrl = []
+success_url = []
+failed_url = []
+all_url = {}
 
-pic_list = blogParser.parse_response(jsonPath)
-if pic_list:
-    print("total", len(pic_list), "need download")
-    thread.batch_download(pic_list, savePath)
+# raw_url = {constants.key_path: []}
+
+# total_url = {constants.key_origin: [], constants.key_raw: []}
+
+# pic_list = blogParser.parse_response(jsonPath)
+
+response_parser.parse_response(all_url, json_path)
+
+if all_url:
+    print("total", len(all_url), "need download")
+    batch_downloader.batch_download(all_url, success_url, failed_url, save_path)
 else:
-    print("empty list")
+    print("empty urls")
 
+if failed_url:
+    print("\nfailed", len(failed_url))
+    print(failed_url)
+else:
+    print("all task success")
