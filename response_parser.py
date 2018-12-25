@@ -116,6 +116,9 @@ def get_key(url: str):
         # index = url_path.rindex(".")
         # if index >= 0:
         #     url_path = url_path[1:index]
+        prefix = "/img/"
+        if prefix in url_path:
+            url_path = url_path.replace(prefix, "")
         if "/" in url_path:
             url_path = url_path.replace("/", "")
     finally:
