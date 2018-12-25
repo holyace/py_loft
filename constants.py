@@ -6,8 +6,6 @@ key_raw = "raw"
 key_origin = "orign"
 key_path = "key_path"
 
-name_length = len("aFYrZlVtbllRa3Uvbmk2WS9HdHNvKzhBQTlNQ3VrS0JXT2VtdnYxaWwrTlFSb2Fmb2JZVlFnPT0")
-
 invalid_url = ["aFYrZlVtbllRa3Uvbmk2WS9HdHNvKzhBQTlNQ3VrS0JXT2VtdnYxaWwrTlFSb2Fmb2JZVlFnPT0",
                "cGhURHJqUEtFbWI1TmI0a0hOdldTeDBuYWFXcit1TlUybGVKMFdRSnlFKzh5SFR5dnBkdkJ3PT0",
                "cGhURHJqUEtFbWJlcEFmY2kvUGg3b2RrRWR6U205aVBma3VkMWd5aUdxQWF6WjlKQlpsV1RRPT0",

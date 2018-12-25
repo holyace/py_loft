@@ -113,9 +113,9 @@ def get_key(url: str):
         base_url = url
     url_path = urlparse(base_url).path
     try:
-        index = url_path.rindex(".")
-        if index >= 0:
-            url_path = url_path[index - constants.name_length:]
+        # index = url_path.rindex(".")
+        # if index >= 0:
+        #     url_path = url_path[1:index]
         if "/" in url_path:
             url_path = url_path.replace("/", "")
     finally:
