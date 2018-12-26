@@ -6,7 +6,7 @@ create by:chad at 2018/12/24
 """
 
 from concurrent.futures import ThreadPoolExecutor
-import downloader
+from net.downloader import downloader
 
 
 def batch_download(url_map: dict, success_url: list, failed_url: list, save_path: str):

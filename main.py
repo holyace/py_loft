@@ -1,7 +1,7 @@
 import os
 import constants
-import response_parser
-import batch_downloader
+from lofter import response_parser
+from lofter.downloader import batch_downloader
 
 curr_dir = os.getcwd()
 json_path = curr_dir + constants.path_json

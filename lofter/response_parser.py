@@ -7,7 +7,7 @@ create by:chad at 2018/12/24
 import json
 from urllib.parse import urlparse
 
-import constants
+from lofter.lofter_const import LfConst
 
 
 def parse_response(url_list: dict, file_path: str):
@@ -75,11 +75,11 @@ def __parse_photo_link(url_list: dict, photo_link: str):
     for item in photo_link_json:
         if not item:
             continue
-        if constants.key_raw in item:
-            url = item[constants.key_raw]
+        if LfConst.key_raw in item:
+            url = item[LfConst.key_raw]
             __check_url_and_add(url_list, get_key(url), url)
-        if constants.key_origin in item:
-            url = item[constants.key_origin]
+        if LfConst.key_origin in item:
+            url = item[LfConst.key_origin]
             __check_url_and_add(url_list, get_key(url), url)
 
     return
@@ -89,7 +89,7 @@ def __check_url_and_add(url_list: dict, key: str, url: str):
     if not key or not url:
         print("illegal argument", key, url)
         return
-    for invalid in constants.invalid_url:
+    for invalid in LfConst.invalid_url:
         if invalid in url:
             print("found invalid url", url)
             return
